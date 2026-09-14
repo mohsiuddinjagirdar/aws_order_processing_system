@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>E-Commerce Order System</title>
+
+<style>
+
+body{
+    font-family:Arial;
+    background:#f4f4f4;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    background:white;
+    width:400px;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0px 0px 10px rgba(0,0,0,.2);
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+    box-sizing:border-box;
+}
+
+button{
+    width:100%;
+    padding:10px;
+    margin-top:15px;
+    background:#007bff;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0056b3;
+}
+
+#result{
+    margin-top:15px;
+    text-align:center;
+    font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Place Order</h2>
+
+<input
+id="customerName"
+placeholder="Customer Name">
+
+<input
+id="customerEmail"
+placeholder="Customer Email">
+
+<input
+id="productName"
+placeholder="Product Name">
+
+<input
+id="quantity"
+type="number"
+placeholder="Quantity">
+
+<button onclick="placeOrder()">
+Place Order
+</button>
+
+<div id="result"></div>
+
+</div>
+
+<script>
+
+const API_URL =
+"YOUR_API_URL";
+
+async function placeOrder(){
+
+try{
+
+const customerName =
+document.getElementById("customerName").value;
+
+const customerEmail =
+document.getElementById("customerEmail").value;
+
+const productName =
+document.getElementById("productName").value;
+
+const quantity =
+document.getElementById("quantity").value;
+
+const response =
+await fetch(API_URL,{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+customerName,
+customerEmail,
+productName,
+quantity
+})
+});
+
+const data = await response.json();
+
+document.getElementById("result").innerHTML =
+"✅ " + data.message;
+
+}catch(error){
+
+document.getElementById("result").innerHTML =
+"❌ Error placing order";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
