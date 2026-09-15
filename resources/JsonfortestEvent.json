@@ -1,0 +1,45 @@
+{
+    "resource": "/{proxy+}",
+    "path": "/order",
+    "httpMethod": "POST",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "queryStringParameters": null,
+    "pathParameters": {
+      "proxy": "order"
+    },
+    "stageVariables": null,
+    "requestContext": {
+      "resourceId": "resourceId",
+      "resourcePath": "/{proxy+}",
+      "httpMethod": "POST",
+      "extendedRequestId": "extendedRequestId",
+      "requestTime": "time",
+      "path": "/order",
+      "accountId": "accountId",
+      "protocol": "HTTP/1.1",
+      "stage": "prod",
+      "domainPrefix": "domainPrefix",
+      "requestTimeEpoch": 1234567890,
+      "requestId": "requestId",
+      "identity": {
+        "cognitoIdentityPoolId": null,
+        "accountId": null,
+        "cognitoIdentityId": null,
+        "caller": null,
+        "sourceIp": "127.0.0.1",
+        "principalOrgId": null,
+        "accessKey": null,
+        "cognitoAuthenticationType": null,
+        "cognitoAuthenticationProvider": null,
+        "userArn": null,
+        "userAgent": "Custom User Agent String",
+        "user": null
+      },
+      "domainName": "domainName",
+      "apiId": "apiId"
+    },
+    "body": "{\"orderID\": \"12345\",\"customerName\": \"Selina Nguyen\",\"items\": [{\"itemId\": \"item123\",\"quantity\": 20},{\"itemId\": \"item456\",\"quantity\": 11}],\"shippingAddress\": \"111 Nguyen Trai, HCMC, Vietnam\"}",
+    "isBase64Encoded": false
+  }
