@@ -1,0 +1,20 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "*",
+            "Resource": "arn:aws:sqs:us-east-1:951308103606:blueocean-orderqueue"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "sns:Publish",
+            "Resource": "arn:aws:sns:us-east-1:951308103606:blueocean-notification"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "*",
+            "Resource": "arn:aws:dynamodb:us-east-1:951308103606:table/blueocean-orders"
+        }
+    ]
+}
